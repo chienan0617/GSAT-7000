@@ -1,0 +1,32 @@
+{
+  "app": {
+    "tutored": false,
+    "first": false,
+    "language": 1,
+    "navigation-bar-index": 1,
+    "task-id": 0,
+    "task-group-id": 0,
+    "tutorial:calendar": false,
+    "tutorial:todo-group": false,
+    "tutorial:calendar_add": false,
+    "tutorial:calendar_view": false,
+    "setting:theme": "light",
+    "setting:lang": 0,
+    "calendar-view-mode": 0
+  },
+  "task-group": {
+    "null": null
+  },
+  "task": {
+    "null": null
+  },
+  "task-deleted": {
+    "null": null
+  },
+  "task-group-deleted": {
+    "null": null
+  },
+  "task-coeditor": {
+    "null": null
+  }
+}

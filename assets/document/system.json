@@ -1,0 +1,12 @@
+{
+  "application-name": "Calendar Noter",
+  "pack-name": "com.castudio.calendar_noter",
+  "version": "Alpha v0.0.0",
+  "latest-update": {
+    "v0.0.3": "UTC-8 2025/07/12 19:52:54",
+    "v0.0.14": "UTC-8 2025/08/04 21:20:29"
+  },
+  "service-id": "9832-15976098531-32",
+  "reset-database": true,
+  "database-version": "v0.0.0"
+}
