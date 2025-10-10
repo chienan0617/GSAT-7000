@@ -1,3 +1,5 @@
+library;
+
 import 'package:vocabulary/base.dart';
 
 // * Theme data

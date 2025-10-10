@@ -1,3 +1,5 @@
+library;
+
 import 'package:vocabulary/base.dart';
 
 var darkMode = Data.app.get<String>('setting:theme') == 'light' ? false : true;   //Random().nextBool();
