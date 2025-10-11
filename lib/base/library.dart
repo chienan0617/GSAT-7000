@@ -23,6 +23,7 @@ Color light({int o = 0}) => Color.fromRGBO(232 - o, 232 - o, 232 - o, 1);
 
 Color dark({int o = 0}) => Color.fromRGBO(24 + o, 24 + o, 24 + o, 1);
 
+@Deprecated("too old to use")
 TextStyle textStyle({
   double size = 20,
   int os = 0,
@@ -33,7 +34,8 @@ TextStyle textStyle({
   fontSize: size,
 );
 
-Text text(
+@Deprecated("use text() instead")
+Text textDeprecated(
   String text, {
   double size = 16,
   FontWeight w = FontWeight.normal,
@@ -49,8 +51,28 @@ Text text(
   maxLines: ml,
 );
 
-Icon icon(IconData icon, {double size = 20}) =>
-    Icon(icon, size: size, color: style());
+Text text(
+  String msg, [
+  double size = 16,
+  FontWeight weight = fw5,
+  Color color = textColor,
+  bool translate = true,
+  FontStyle style = fsN,
+]) => Text(
+  translate ? word(msg) : msg,
+  style: TextStyle(
+    fontSize: size,
+    fontWeight: weight,
+    fontStyle: fsN,
+    color: color,
+  ),
+);
+
+Icon icon(IconData icon, [double size = 20]) =>
+    Icon(icon, size: size, color: textColor);
+
+IconButton iconButton(Icon icon, [VoidCallback fn = none]) =>
+    IconButton(onPressed: fn, icon: icon);
 
 FittedBox getErrorBox(String text, {color = Colors.red}) => FittedBox(
   child: Container(
@@ -191,75 +213,5 @@ ListTile getListTile(
             },
             icon: Icon(trailing, color: style(), size: trailingSize),
           ),
-  );
-}
-
-// * Store Type
-
-// class T {
-//   static final String currentWindowIndex = "currentWindowIndex";
-//   static final String setting = "setting";
-//   static final String task = "task";
-//   static final String calendarRepeat = "calendarRepeat";
-// }
-
-// * information
-
-// class System {
-//   static const bool darkMode = true;
-//   static String version = ""; // Beta 1.1.2
-//   static bool debugMode = true;
-// }
-
-class A {
-  static ThemeData get themeData => ThemeData(
-    primaryColor: primary,
-    primaryColorLight: primary,
-    primaryColorDark: primary,
-    hoverColor: Color.fromRGBO(192, 192, 192, 1),
-    splashColor: style(op: false),
-    highlightColor: style(op: false),
-    scaffoldBackgroundColor: style(op: false),
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: primary),
-    hintColor: Color.fromRGBO(128, 128, 128, 1),
-    appBarTheme: AppBarTheme(
-      // shadowColor: primary,
-      // foregroundColor: primary,
-      surfaceTintColor: primary,
-      actionsIconTheme: getIconThemeData(32),
-      backgroundColor: style(n: true, op: false, os: -6),
-      titleTextStyle: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.w700,
-        color: style(),
-      ),
-    ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: primary,
-      focusColor: style(os: 96),
-      splashColor: style(os: 64),
-      hoverColor: style(os: 48),
-      shape: CircleBorder(),
-    ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: style(op: false, n: true, os: 6),
-      selectedIconTheme: IconThemeData(color: primary),
-      unselectedIconTheme: getIconThemeData(24),
-      selectedItemColor: primary,
-      unselectedItemColor: style(),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: InputBorder.none,
-      enabledBorder: InputBorder.none,
-      focusedBorder: InputBorder.none,
-      errorBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.red, width: 1),
-      ),
-      contentPadding: EdgeInsets.symmetric(vertical: 8),
-      hintStyle: TextStyle(fontSize: 16, color: style(os: 48)),
-      focusColor: Colors.deepPurpleAccent,
-      hoverColor: Colors.blueAccent,
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(),
   );
 }

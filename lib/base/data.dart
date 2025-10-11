@@ -1,5 +1,10 @@
 import 'package:vocabulary/base.dart';
 import 'package:crypto/crypto.dart' as crypto;
+import 'package:vocabulary/script/data/vocabulary/language_type.dart';
+import 'package:vocabulary/script/data/textbook.dart';
+import 'package:vocabulary/script/data/vocabulary/vocabulary.dart';
+import 'package:vocabulary/script/data/vocabulary/type.dart';
+import 'package:vocabulary/script/data/vocabulary/usage.dart';
 
 
 class Data {
@@ -26,7 +31,9 @@ class Data {
 
   static void registerAdapter() {
     // Hive.ignoreTypeId(97);
-    Hive.registerAdapter(ColorAdapter());
+    for (var e in registers) {
+      Hive.registerAdapter(e);
+    }
     // Hive.registerAdapter(adapter)
   }
 }
@@ -45,7 +52,7 @@ class Database implements Registerable, Initialable {
     final String salt = Data.databaseVersion;
     final bytes = utf8.encode(salt + key);
     final digest = crypto.sha256.convert(bytes);
-    return digest.toString().substring(0, 16);
+    return digest.toString().substring(0, 8);
   }
 
   @override
@@ -88,3 +95,12 @@ class Database implements Registerable, Initialable {
 
   Box getBox() => _box;
 }
+
+List<TypeAdapter> registers = [
+  ColorAdapter(),
+  LanguageTypeAdapter(),
+  TextbookAdapter(),
+  VocabularyTypeAdapter(),
+  VocabularyUsageAdapter(),
+  VocabularyAdapter()
+];

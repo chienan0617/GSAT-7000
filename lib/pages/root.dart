@@ -12,7 +12,7 @@ class _RootPageState extends State<RootPage> {
   @override
   void initState() {
     super.initState();
-    darkMode = Data.app.get<String>('setting:theme') == 'light' ? false : true;
+    // darkMode = Data.app.get<String>('setting:theme') == 'light' ? false : true;
     Rebuild.rootRebuild = () => setState(() {});
   }
 
@@ -22,12 +22,12 @@ class _RootPageState extends State<RootPage> {
       theme: ThemeData(
         brightness: darkMode ? Brightness.dark : Brightness.light,
         primaryColor: primaryColor,
-        scaffoldBackgroundColor: darkMode ? background1 : background2,
-        canvasColor: darkMode ? background3 : background4,
-        textTheme: TextTheme(
-          // bodyText1: TextStyle(color: textColor),
-          // bodyText2: TextStyle(color: textColor2),
-        ),
+        // scaffoldBackgroundColor: darkMode ? background1 : background2,
+        // canvasColor: darkMode ? background3 : background4,
+        // textTheme: TextTheme(
+        //   // bodyText1: TextStyle(color: textColor),
+        //   // bodyText2: TextStyle(color: textColor2),
+        // ),
       ),
       home: const CorePage(),
       builder: (context, child) {

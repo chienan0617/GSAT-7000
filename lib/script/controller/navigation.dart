@@ -1,4 +1,5 @@
 import 'package:vocabulary/base.dart';
+import 'package:vocabulary/pages/core/vocabulary/vocabulary.dart';
 
 class Navigation {
   @registerFirst
@@ -15,7 +16,7 @@ class Navigation {
   static Widget getPage() {
     switch (currentIndex) {
       // case 0: return DashboardPage();
-      case 0: return _defaultPage;
+      case 0: return VocabularyPage();
       case 1: return _defaultPage;
       case 2: return _defaultPage;
       // case 2: return _defaultPage;
