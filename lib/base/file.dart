@@ -3,44 +3,48 @@ import 'package:vocabulary/base.dart';
 class FileHandle {
   static Map data = {};
 
-  static Future<dynamic> getTemplate(String name, String fileName) async {
-    if (data[name] == null) {
-      data[name] = jsonDecode(
+  static Future<dynamic> getAndSaveCache(String key, String fileName) async {
+    if (data[key] == null) {
+      var decoded = jsonDecode(
         await rootBundle.loadString('assets/document/$fileName.json'),
       );
+
+      data[key] = decoded;
+      return decoded;
     }
-    return data[name];
+    return data[key];
   }
 
   @method
   static Future<Map<String, dynamic>> getRegister(String name) async {
-    return (await getTemplate('register', 'register') as Map)[name];
+    return (await getAndSaveCache('register', 'register') as Map)[name];
   }
 
   @method
   static Future<Map> getLanguageWord(String lang) async {
-    return (await getTemplate('language', 'language/$lang') as Map);
+    return (await getAndSaveCache('language', 'language/$lang') as Map);
   }
 
   @method
   static Future<Map<String, dynamic>> getTutorialKeys() async {
-    return (await getTemplate('tutorial', 'tutorial/tutorial'));
+    return (await getAndSaveCache('tutorial', 'tutorial/tutorial'));
   }
 
   @method
   static Future<Map> getTutorialKeysLang(String lang) async {
-    return (await getTemplate('tutorialLang', 'tutorial/$lang'));
+    return (await getAndSaveCache('tutorialLang', 'tutorial/$lang'));
   }
 
   @method
   static Future<List> getColors(String lang) async {
-    return (await getTemplate('color', 'color'))[lang];
+    return (await getAndSaveCache('color', 'color'))[lang];
   }
 
   @method
   static Future<Map> getSystem() async {
-    return (await getTemplate('system', 'system'));
+    return (await getAndSaveCache('system', 'system'));
   }
 
+  @Deprecated("use getAndSaveCache() instead.")
   static Future<dynamic> get(String key) async {}
 }

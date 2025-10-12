@@ -1,0 +1,24 @@
+[
+  [
+    "c",
+    "n",
+    "apple",
+    "type of food",
+    [
+      "蘋果",
+      "餅購"
+    ]
+  ],
+  [
+    "apple synonyms",
+    "apple antonyms",
+    "apple extensions",
+    "an + apple",
+    [
+      "I am eating an apple",
+      "Apple everyday, doctor keeps away"
+    ]
+  ]
+]
+
+c,n,apple,type of food,蘋果/餅購,apple synonyms,apple antonyms,apple extensions,an + apple,I am eating an apple/Apple everyday, doctor keeps away

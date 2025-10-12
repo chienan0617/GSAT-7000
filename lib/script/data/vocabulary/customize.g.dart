@@ -20,8 +20,8 @@ class VocabularyCustomizeAdapter extends TypeAdapter<VocabularyCustomize> {
       fields[0] as bool,
       fields[2] as bool,
       fields[1] as int,
-      fields[3] as DateTime,
-      fields[4] as String,
+      fields[3] as DateTime?,
+      fields[4] as String?,
     );
   }
 

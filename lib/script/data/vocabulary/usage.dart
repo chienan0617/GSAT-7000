@@ -1,18 +1,17 @@
 import 'package:vocabulary/base.dart';
-import 'package:vocabulary/script/data/vocabulary/vocabulary.dart';
 
 part 'usage.g.dart';
 
 @HiveType(typeId: 52)
 class VocabularyUsage {
   @HiveField(0)
-  final List<Vocabulary>? synonyms;
+  final List<String>? synonyms;
 
   @HiveField(1)
-  final List<Vocabulary>? antonyms;
+  final List<String>? antonyms;
 
   @HiveField(2)
-  final List<Vocabulary>? extensions;
+  final List<String>? extensions;
 
   @HiveField(3)
   final String? collocation;

@@ -17,9 +17,9 @@ class VocabularyUsageAdapter extends TypeAdapter<VocabularyUsage> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return VocabularyUsage(
-      (fields[0] as List?)?.cast<Vocabulary>(),
-      (fields[1] as List?)?.cast<Vocabulary>(),
-      (fields[2] as List?)?.cast<Vocabulary>(),
+      (fields[0] as List?)?.cast<String>(),
+      (fields[1] as List?)?.cast<String>(),
+      (fields[2] as List?)?.cast<String>(),
       fields[3] as String?,
       (fields[4] as List).cast<String>(),
     );

@@ -14,10 +14,10 @@ class VocabularyCustomize {
   final bool done;
 
   @HiveField(3)
-  final DateTime finishTime;
+  final DateTime? finishTime;
 
   @HiveField(4)
-  final String note;
+  final String? note;
 
   VocabularyCustomize(
     this.stared,

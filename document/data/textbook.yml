@@ -1,0 +1,4 @@
+Textbook:
+  name: string
+  voc: Map<String, vocabulary>
+  createTime: DateTime,

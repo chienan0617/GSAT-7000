@@ -18,7 +18,7 @@ class TextbookAdapter extends TypeAdapter<Textbook> {
     };
     return Textbook(
       fields[0] as String,
-      (fields[1] as Map).cast<String, Vocabulary>(),
+      (fields[1] as List).cast<Vocabulary>(),
       fields[2] as DateTime,
     );
   }

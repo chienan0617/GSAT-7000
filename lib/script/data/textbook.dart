@@ -10,12 +10,10 @@ class Textbook with TextbookUtil {
   final String name;
 
   @HiveField(1)
-  final Map<String, Vocabulary> voc;
+  final List<Vocabulary> voc;
 
   @HiveField(2)
   final DateTime createTime;
-
-  @HiveField(3)
 
   const Textbook(this.name, this.voc, this.createTime);
 }

@@ -1,0 +1,29 @@
+Vocabulary:
+  info (VocabularyCustomize):
+    langType (LanguageType):
+      - english
+      - chinese
+    type (vocabularyType):
+      - noun
+      - verb
+      - adj
+      - adv
+      - prep
+      - conj
+    word: string
+    explanation: string?
+    meanings: List<string>
+
+  customize (VocabularyCustomize):
+    stared: bool
+    familiarity: int
+    done: bool
+    finishTime: DateTime
+    note: string
+
+  usage (VocabularyUsage):
+    synonyms: List<string>?
+    antonyms: List<string>?
+    extensions: List<string>?
+    collocation: string?
+    examples: List<string>

@@ -38,7 +38,10 @@ const fw9 = FontWeight.w900;
 const fsN = FontStyle.normal;
 const fsI = FontStyle.italic;
 
-List<Color> colors = (FileHandle.getTemplate("colors", "colors") as Iterable)
+// ignore: camel_case_types
+typedef string = String;
+
+List<Color> colors = (FileHandle.getAndSaveCache("colors", "colors") as Iterable)
     .cast<String>()
     .map((e) => hexColor(e))
     .toList()

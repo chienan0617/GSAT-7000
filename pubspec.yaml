@@ -1,7 +1,7 @@
 name: vocabulary
 description: "GSAT 7000 Vocabulary"
 
-version: 0.0.1
+version: 0.0.3
 
 environment:
   sdk: ^3.8.1
@@ -22,6 +22,7 @@ dependencies:
   app_settings: ^5.1.0
   http: ^1.5.0
   crypto: ^3.0.6
+  archive: ^4.0.7
 
 dev_dependencies:
   flutter_test:
