@@ -1,4 +1,5 @@
 import 'package:vocabulary/base.dart';
+import 'package:vocabulary/pages/core/vocabulary/section.dart';
 
 class VocabularyPage extends StatefulWidget {
   const VocabularyPage({super.key});
@@ -26,7 +27,11 @@ class _VocabularyPageState extends State<VocabularyPage> {
         ],
       ),
       body: Column(
-        children: [],
+        children: [
+          height(15),
+          VocabularyTextbookSection(textbook: result),
+          VocabularyTextbookSection(textbook: result)
+        ],
       ),
     );
   }

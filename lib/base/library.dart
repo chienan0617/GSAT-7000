@@ -15,6 +15,7 @@ import 'package:vocabulary/base.dart';
 Color _primaryColor = hexColor("#028C6A");
 Color _secondaryColor = Color.fromRGBO(211, 194, 42, 1);
 Color _errorColor = Colors.redAccent;
+@Deprecated("message")
 Color get primary => _primaryColor;
 Color secondary() => _secondaryColor;
 Color errorColor() => _errorColor;
@@ -51,28 +52,7 @@ Text textDeprecated(
   maxLines: ml,
 );
 
-Text text(
-  String msg, [
-  double size = 16,
-  FontWeight weight = fw5,
-  Color color = textColor,
-  bool translate = true,
-  FontStyle style = fsN,
-]) => Text(
-  translate ? word(msg) : msg,
-  style: TextStyle(
-    fontSize: size,
-    fontWeight: weight,
-    fontStyle: fsN,
-    color: color,
-  ),
-);
 
-Icon icon(IconData icon, [double size = 20]) =>
-    Icon(icon, size: size, color: textColor);
-
-IconButton iconButton(Icon icon, [VoidCallback fn = none]) =>
-    IconButton(onPressed: fn, icon: icon);
 
 FittedBox getErrorBox(String text, {color = Colors.red}) => FittedBox(
   child: Container(
@@ -144,6 +124,11 @@ Color hexColor(String hex, {int os = 0}) {
   return Colors.transparent;
 }
 
+Color hex(int h, {int os = 0}) {
+  String hexString = h.toRadixString(16).padLeft(6, '0').toUpperCase();
+  return hexColor(hexString, os: os);
+}
+
 EdgeInsets edge({double h = 0, double v = 0}) {
   return EdgeInsets.symmetric(horizontal: h, vertical: v);
 }
@@ -188,7 +173,6 @@ int hexToRgba32(String hex) {
   return (r << 24) | (g << 16) | (b << 8) | a;
 }
 
-void e() {}
 
 ListTile getListTile(
   IconData leading,
@@ -197,7 +181,7 @@ ListTile getListTile(
   titleSize = 20.0,
   IconData trailing = Icons.abc,
   trailingSize = 20.0,
-  Function trailingFunc = e,
+  Function trailingFunc = none,
 }) {
   return ListTile(
     leading: Icon(leading, color: style(), size: leadingSize),

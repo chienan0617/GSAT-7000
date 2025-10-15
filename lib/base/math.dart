@@ -71,3 +71,24 @@ class Vector2F {
     return sqrt(x * x + y * y);
   }
 }
+
+class Vector2<E> {
+  E x;
+  E y;
+
+  Vector2(this.x, this.y);
+
+  Vector2 set(Vector2 v) {
+    x = v.x;
+    y = v.y;
+    return this;
+  }
+
+  Vector2 setV(E x, E y) {
+    this.x = x;
+    this.y = y;
+    return this;
+  }
+}
+
+typedef Pair<E> = Vector2<E>;

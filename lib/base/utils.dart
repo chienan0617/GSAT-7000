@@ -50,8 +50,6 @@ class Util {
     }
     return days;
   }
-
-  static Size getSize(ctx) => MediaQuery.of(ctx).size;
 }
 
 String str(Object object) => object.toString();

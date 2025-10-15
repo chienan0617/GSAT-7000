@@ -33,7 +33,7 @@ export 'package:vocabulary/base/rebuild.dart';
 export 'package:vocabulary/base/system.dart';
 export 'package:vocabulary/base/test.dart' hide System, e;
 export 'package:vocabulary/base/tutor.dart';
-export 'package:vocabulary/base/util.dart' hide str, width, height;
+export 'package:vocabulary/base/utils.dart' hide str, width, height;
 export 'package:vocabulary/base/definition.dart';
 export 'package:vocabulary/base/widgets.dart';
 export 'package:vocabulary/base/native.dart';
