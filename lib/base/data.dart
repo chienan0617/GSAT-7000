@@ -10,6 +10,7 @@ import 'package:vocabulary/script/data/vocabulary/usage.dart';
 class Data {
   static final String databaseVersion = System.databaseVersion;
   static final app = Database('app');
+  static final textbook = Database('textbook');
   // static final taskGroup = Database('task-group');
   // static final taskDeleted = Database('task-deleted');
 

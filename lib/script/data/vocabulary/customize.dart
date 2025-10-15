@@ -1,6 +1,6 @@
 import 'package:vocabulary/base.dart';
 
-part 'customize.g.dart';
+part '../generated/customize.g.dart';
 
 @HiveType(typeId: 54)
 class VocabularyCustomize {

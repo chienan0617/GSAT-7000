@@ -1,38 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'vocabulary.dart';
+part of '../textbook.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class VocabularyAdapter extends TypeAdapter<Vocabulary> {
+class TextbookAdapter extends TypeAdapter<Textbook> {
   @override
-  final int typeId = 49;
+  final int typeId = 48;
 
   @override
-  Vocabulary read(BinaryReader reader) {
+  Textbook read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Vocabulary(
-      fields[0] as VocabularyInformation,
-      fields[1] as VocabularyCustomize,
-      fields[3] as VocabularyUsage,
+    return Textbook(
+      fields[0] as String,
+      (fields[1] as List).cast<Vocabulary>(),
+      fields[2] as DateTime,
+      fields[3] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Vocabulary obj) {
+  void write(BinaryWriter writer, Textbook obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.info)
+      ..write(obj.name)
       ..writeByte(1)
-      ..write(obj.customize)
+      ..write(obj.voc)
+      ..writeByte(2)
+      ..write(obj.createTime)
       ..writeByte(3)
-      ..write(obj.usage);
+      ..write(obj.catalog);
   }
 
   @override
@@ -41,7 +44,7 @@ class VocabularyAdapter extends TypeAdapter<Vocabulary> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is VocabularyAdapter &&
+      other is TextbookAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -2,7 +2,7 @@ import 'package:vocabulary/base.dart';
 import 'package:vocabulary/script/data/vocabulary/language_type.dart';
 import 'package:vocabulary/script/data/vocabulary/type.dart';
 
-part 'information.g.dart';
+part '../generated/information.g.dart';
 
 @HiveType(typeId: 53)
 class VocabularyInformation {

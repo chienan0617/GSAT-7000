@@ -1,5 +1,6 @@
 library;
 
+import 'package:archive/archive.dart' hide FileHandle;
 import 'package:vocabulary/base.dart';
 
 // var darkMode = Data.app.get<String>('setting:theme') == 'light' ? false : true;   //Random().nextBool();
@@ -20,6 +21,8 @@ const Color background1 = darkMode
 var background2 = darkMode ? const Color(0xFF91A0C9) : const Color(0xFF49609B);
 var background3 = darkMode ? Color.fromARGB(255, 15, 18, 24) : Colors.white;
 var background4 = darkMode ? const Color(0xFF262626) : const Color(0xFFE8EAF2);
+
+final gZipDecoder = GZipDecoder();
 
 const transparent = Colors.transparent;
 final void Function() onPressed = none;

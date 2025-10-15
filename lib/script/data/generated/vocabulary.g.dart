@@ -1,44 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'information.dart';
+part of '../vocabulary/vocabulary.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class VocabularyInformationAdapter extends TypeAdapter<VocabularyInformation> {
+class VocabularyAdapter extends TypeAdapter<Vocabulary> {
   @override
-  final int typeId = 53;
+  final int typeId = 49;
 
   @override
-  VocabularyInformation read(BinaryReader reader) {
+  Vocabulary read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return VocabularyInformation(
-      fields[0] as LanguageType,
-      fields[1] as VocabularyType,
-      fields[2] as String,
-      fields[3] as String?,
-      (fields[4] as List).cast<String>(),
+    return Vocabulary(
+      fields[0] as VocabularyInformation,
+      fields[1] as VocabularyCustomize,
+      fields[3] as VocabularyUsage,
     );
   }
 
   @override
-  void write(BinaryWriter writer, VocabularyInformation obj) {
+  void write(BinaryWriter writer, Vocabulary obj) {
     writer
-      ..writeByte(5)
-      ..writeByte(0)
-      ..write(obj.langType)
-      ..writeByte(1)
-      ..write(obj.type)
-      ..writeByte(2)
-      ..write(obj.word)
       ..writeByte(3)
-      ..write(obj.explanation)
-      ..writeByte(4)
-      ..write(obj.meanings);
+      ..writeByte(0)
+      ..write(obj.info)
+      ..writeByte(1)
+      ..write(obj.cust)
+      ..writeByte(3)
+      ..write(obj.usage);
   }
 
   @override
@@ -47,7 +41,7 @@ class VocabularyInformationAdapter extends TypeAdapter<VocabularyInformation> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is VocabularyInformationAdapter &&
+      other is VocabularyAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

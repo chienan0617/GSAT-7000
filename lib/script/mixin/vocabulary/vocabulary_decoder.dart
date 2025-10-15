@@ -5,11 +5,8 @@ import 'package:vocabulary/script/data/vocabulary/language_type.dart';
 import 'package:vocabulary/script/data/vocabulary/type.dart';
 import 'package:vocabulary/script/data/vocabulary/usage.dart';
 import 'package:vocabulary/script/data/vocabulary/vocabulary.dart';
-import 'package:archive/archive.dart';
 
 mixin VocabularyDecoder {
-  static final gZipDecoder = GZipDecoder();
-
   static Future<Vocabulary> decodeVocFromFile(String path) async {
     ByteData data = await rootBundle.load(path);
     List<int> bytes = data.buffer.asUint8List();
@@ -28,13 +25,13 @@ mixin VocabularyDecoder {
       _getVocType(sep[1]),
       sep[2],
       sep[3],
-      (sep[4] as List).cast<String>(),
+      _spilt(sep[4]),
       // *
-      (sep[5] as List).cast<String>(),
-      (sep[6] as List).cast<String>(),
-      (sep[6] as List).cast<String>(),
-      sep[7],
-      (sep[8] as List).cast<String>(),
+      _spilt(sep[5]),
+      _spilt(sep[6]),
+      _spilt(sep[7]),
+      sep[8],
+      _spilt(sep[9]),
     ];
 
     // handle
@@ -43,6 +40,10 @@ mixin VocabularyDecoder {
     final usage = VocabularyUsage(j[5], j[6], j[7], j[8], j[9]);
 
     return Vocabulary(info, customize, usage);
+  }
+
+  static List<String> _spilt(String sou) {
+    return sou.split('/').toList();
   }
 
   static LanguageType _getLangType(String type) {
@@ -55,7 +56,7 @@ mixin VocabularyDecoder {
 
   static VocabularyType _getVocType(String type) {
     return switch (type) {
-      'n' => VocabularyType.noun,
+      'n' => VocabularyType .noun,
       'v' => VocabularyType.verb,
       'a' => VocabularyType.adj,
       'd' => VocabularyType.adv,

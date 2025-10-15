@@ -27,7 +27,9 @@ class _CorePageState extends State<CorePage> {
         child: BottomNavigationBar(
           items: [
             item(Icons.book_outlined, Icons.book, "Vocabulary", 0),
-            item(Icons.settings_outlined, Icons.settings, "Setting", 1),
+            item(Icons.search, Icons.saved_search, "Vocabulary", 1),
+            // item(Icons.contact, Icons.saved_search, "Vocabulary", 1),
+            item(Icons.settings_outlined, Icons.settings, "Setting", 2),
           ],
           backgroundColor: background1,
           selectedFontSize: 14,

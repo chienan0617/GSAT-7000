@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'type.dart';
+part of '../vocabulary/type.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

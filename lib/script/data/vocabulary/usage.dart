@@ -1,6 +1,6 @@
 import 'package:vocabulary/base.dart';
 
-part 'usage.g.dart';
+part '../generated/usage.g.dart';
 
 @HiveType(typeId: 52)
 class VocabularyUsage {

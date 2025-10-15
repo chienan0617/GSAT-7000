@@ -1,6 +1,6 @@
 import 'package:vocabulary/base.dart';
 
-part 'type.g.dart';
+part '../generated/type.g.dart';
 
 @HiveType(typeId: 51)
 enum VocabularyType {

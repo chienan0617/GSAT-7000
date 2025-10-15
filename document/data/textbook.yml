@@ -1,4 +1,4 @@
 Textbook:
   name: string
-  voc: Map<String, vocabulary>
+  voc: List<Vocabulary>
   createTime: DateTime,
