@@ -25,7 +25,7 @@ var background4 = darkMode ? const Color(0xFF262626) : const Color(0xFFE8EAF2);
 
 var c1 = _pair(hex(0x111418), hex(0xF8F9FA));
 var c2 = _pair(hex(0x121E23), hex(0xFFFFFF));
-var c3 = _pair(hex(0x1F2937), hex(0xEEFEF4));
+var c3 = _pair(hex(0x1F2937), hex(0xEEF1F4));
 
 final gZipDecoder = GZipDecoder();
 

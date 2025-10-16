@@ -1,11 +1,12 @@
 import 'package:vocabulary/base.dart';
-import 'package:vocabulary/pages/core/vocabulary/unit/unit.dart';
-import 'package:vocabulary/script/data/textbook.dart';
+import 'package:vocabulary/pages/core/vocabulary/inventory/inventory.dart';
+import 'package:vocabulary/script/data/unit.dart';
 
-class VocabularyTextbookSection extends StatelessWidget {
-  final Textbook textbook;
+class UnitSelection extends StatelessWidget {
+  final Unit unit;
 
-  const VocabularyTextbookSection({super.key, required this.textbook});
+  const UnitSelection({super.key, required this.unit});
+
   @override
   Widget build(BuildContext ctx) {
     return center(
@@ -13,44 +14,41 @@ class VocabularyTextbookSection extends StatelessWidget {
         onTap: () => Navigator.push(
           ctx,
           MaterialPageRoute(
-            builder: (_) => VocabularyUnitPage(textbook: textbook),
+            builder: (_) => VocabularyInventoryPage(unit: unit),
           ),
         ),
         child: Container(
-          margin: symmetricV(10),
+          margin: symmetricV(7.5),
           width: size(ctx).width * 0.9,
-          height: size(ctx).height * 0.12875,
+          height: size(ctx).height * 0.08685,
           decoration: BoxDecoration(
-            borderRadius: borderCircular(15),
             color: c3,
+            borderRadius: borderCircular(10),
           ),
           child: Row(
-            crossAxisAlignment: crossStart,
             children: [
-              width(20),
+              width(15),
               expandV(
                 Column(
                   crossAxisAlignment: crossStart,
-                  mainAxisSize: mainMin,
                   children: [
                     height(10),
-                    textNt(textbook.catalog, 20, fw7),
+                    textD("Unit ${Math.nextInt(100)}", 18, fw7),
                     expand(),
-                    textD("完成度 27%", 14, fw5, textColor2),
+                    textD("61% completed", 14, fw5, textColor2),
                     height(2.5),
                     LinearProgressIndicator(
-                      value: 0.27,
-                      minHeight: 5,
+                      value: 0.61,
+                      minHeight: 4,
                       backgroundColor: c2,
                       color: debugColor2,
                       borderRadius: borderCircular(10),
                     ),
-                    height(15),
+                    height(10),
                   ],
                 ),
               ),
-              center(icon(Icons.arrow_forward_ios, 24)),
-              width(15),
+              iconButton(icon(Icons.arrow_forward_ios)),
             ],
           ),
         ),

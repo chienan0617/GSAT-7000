@@ -1,41 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../textbook.dart';
+part of '../unit.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TextbookAdapter extends TypeAdapter<Textbook> {
+class UnitAdapter extends TypeAdapter<Unit> {
   @override
-  final int typeId = 48;
+  final int typeId = 55;
 
   @override
-  Textbook read(BinaryReader reader) {
+  Unit read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Textbook(
-      fields[0] as String,
-      (fields[1] as List).cast<Unit>(),
-      fields[2] as DateTime,
-      fields[3] as String,
+    return Unit(
+      fields[0] as int,
+      (fields[1] as List).cast<Vocabulary>(),
     );
   }
 
   @override
-  void write(BinaryWriter writer, Textbook obj) {
+  void write(BinaryWriter writer, Unit obj) {
     writer
-      ..writeByte(4)
-      ..writeByte(0)
-      ..write(obj.name)
-      ..writeByte(1)
-      ..write(obj.units)
       ..writeByte(2)
-      ..write(obj.createTime)
-      ..writeByte(3)
-      ..write(obj.catalog);
+      ..writeByte(0)
+      ..write(obj.num)
+      ..writeByte(1)
+      ..write(obj.voc);
   }
 
   @override
@@ -44,7 +38,7 @@ class TextbookAdapter extends TypeAdapter<Textbook> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TextbookAdapter &&
+      other is UnitAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

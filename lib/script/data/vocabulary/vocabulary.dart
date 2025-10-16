@@ -2,7 +2,7 @@ import 'package:vocabulary/base.dart';
 import 'package:vocabulary/script/data/vocabulary/customize.dart';
 import 'package:vocabulary/script/data/vocabulary/information.dart';
 import 'package:vocabulary/script/data/vocabulary/usage.dart';
-import 'package:vocabulary/script/mixin/vocabulary.dart';
+import 'package:vocabulary/script/mixin/vocabulary/vocabulary.dart';
 import 'package:vocabulary/script/mixin/vocabulary/vocabulary_decoder.dart';
 import 'package:vocabulary/script/mixin/vocabulary/vocabulary_encoder.dart';
 

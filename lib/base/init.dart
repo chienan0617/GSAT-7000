@@ -18,7 +18,7 @@ class Initialize {
     // await AddTaskGroup.initialize();
     // await Calendar.initialize();
     // compute(callback, message)
-    await test();
+    if (kDebugMode) await test();
   }
 
   @temporary
@@ -29,22 +29,22 @@ class Initialize {
     // Hive.deleteFromDisk();
     // var defaultGroup = await TaskGroupUtil.ensureDefaultGroup();
     // if (defaultGroup.tasks.isEmpty) {
-      // TaskGroupUtil.addTaskToGroup(
-      //   'default',
-      //   Task.create(
-      //     title: 'task : demo ${Random().nextInt(32767).toString().padLeft(5, '0')}',
-      //     subtitle: '--',
-      //     taskGroupName: 'default',
-      //     date: DateTime.now(),
-      //     dayIndex: 0,
-      //     expandRight: false,
-      //     expandLeft: false,
-      //     notifyTime: DateTime.now(),
-      //     isMultiDays: false,
-      //     sortIndex: 1,
-      //     multiDaysCount: 0
-      //   ),
-      // );
+    // TaskGroupUtil.addTaskToGroup(
+    //   'default',
+    //   Task.create(
+    //     title: 'task : demo ${Random().nextInt(32767).toString().padLeft(5, '0')}',
+    //     subtitle: '--',
+    //     taskGroupName: 'default',
+    //     date: DateTime.now(),
+    //     dayIndex: 0,
+    //     expandRight: false,
+    //     expandLeft: false,
+    //     notifyTime: DateTime.now(),
+    //     isMultiDays: false,
+    //     sortIndex: 1,
+    //     multiDaysCount: 0
+    //   ),
+    // );
     // }
     // Data.taskGroup.checkKeyExist(
     //   '<default>',
@@ -72,6 +72,5 @@ class Initialize {
     // Notify.testing();
   }
 }
-
 
 class Initialable {}

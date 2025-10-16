@@ -31,7 +31,7 @@ class _CorePageState extends State<CorePage> {
             // item(Icons.contact, Icons.saved_search, "Vocabulary", 1),
             item(Icons.settings_outlined, Icons.settings, "Setting", 2),
           ],
-          backgroundColor: c2,
+          backgroundColor: background1,
           selectedFontSize: 14,
           unselectedFontSize: 14,
           selectedItemColor: primaryColor,

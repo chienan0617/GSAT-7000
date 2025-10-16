@@ -1,6 +1,6 @@
 import 'package:vocabulary/base.dart';
-import 'package:vocabulary/script/data/vocabulary/vocabulary.dart';
-import 'package:vocabulary/script/mixin/textbook.dart';
+import 'package:vocabulary/script/data/unit.dart';
+import 'package:vocabulary/script/mixin/textbook/textbook.dart';
 import 'package:vocabulary/script/mixin/textbook/textbook_decoder.dart';
 import 'package:vocabulary/script/mixin/textbook/textbook_encoder.dart';
 
@@ -12,7 +12,7 @@ class Textbook with TextbookUtils, TextbookEncoder, TextbookDecoder {
   final String name;
 
   @HiveField(1)
-  final List<Vocabulary> voc;
+  final List<Unit> units;
 
   @HiveField(2)
   final DateTime createTime;
@@ -20,5 +20,5 @@ class Textbook with TextbookUtils, TextbookEncoder, TextbookDecoder {
   @HiveField(3)
   final String catalog;
 
-  const Textbook(this.name, this.voc, this.createTime, this.catalog);
+  const Textbook(this.name, this.units, this.createTime, this.catalog);
 }
