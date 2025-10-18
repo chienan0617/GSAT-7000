@@ -22,13 +22,14 @@ class VocabularyUsageAdapter extends TypeAdapter<VocabularyUsage> {
       (fields[2] as List?)?.cast<String>(),
       fields[3] as String?,
       (fields[4] as List).cast<String>(),
+      (fields[5] as List).cast<List<String>>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, VocabularyUsage obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.synonyms)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class VocabularyUsageAdapter extends TypeAdapter<VocabularyUsage> {
       ..writeByte(3)
       ..write(obj.collocation)
       ..writeByte(4)
-      ..write(obj.examples);
+      ..write(obj.examples)
+      ..writeByte(5)
+      ..write(obj.exaTran);
   }
 
   @override

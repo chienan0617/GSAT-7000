@@ -32,8 +32,8 @@ class _VocabularyUnitPageState extends State<VocabularyUnitPage> {
       body: Column(
         children: [
           height(10),
-          UnitSelection(unit: widget.textbook.units[0]),
-          UnitSelection(unit: widget.textbook.units[1]),
+          UnitSelection(unit: widget.textbook.units[0], textbookName: widget.textbook.name),
+          UnitSelection(unit: widget.textbook.units[1], textbookName: widget.textbook.name),
         ],
       ),
     );

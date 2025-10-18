@@ -4,8 +4,13 @@ import 'package:vocabulary/script/data/unit.dart';
 
 class VocabularyInventoryPage extends StatefulWidget {
   final Unit unit;
+  final String textbookName;
 
-  const VocabularyInventoryPage({super.key, required this.unit});
+  const VocabularyInventoryPage({
+    super.key,
+    required this.unit,
+    required this.textbookName,
+  });
 
   @override
   State<VocabularyInventoryPage> createState() =>
@@ -33,8 +38,16 @@ class _VocabularyInventoryPageState extends State<VocabularyInventoryPage> {
       body: Column(
         children: [
           height(10),
-          InventorySection(voc: widget.unit.voc.first),
-          InventorySection(voc: widget.unit.voc.last),
+          InventorySection(
+            voc: widget.unit.voc.first,
+            textbookName: widget.textbookName,
+            unitNum: widget.unit.num,
+          ),
+          InventorySection(
+            voc: widget.unit.voc.last,
+            textbookName: widget.textbookName,
+            unitNum: widget.unit.num,
+          ),
         ],
       ),
     );

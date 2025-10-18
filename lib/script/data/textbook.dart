@@ -17,8 +17,5 @@ class Textbook with TextbookUtils, TextbookEncoder, TextbookDecoder {
   @HiveField(2)
   final DateTime createTime;
 
-  @HiveField(3)
-  final String catalog;
-
-  const Textbook(this.name, this.units, this.createTime, this.catalog);
+  const Textbook(this.name, this.units, this.createTime);
 }

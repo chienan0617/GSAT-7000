@@ -4,7 +4,7 @@ import 'package:archive/archive.dart' hide FileHandle;
 import 'package:vocabulary/base.dart';
 
 // var darkMode = Data.app.get<String>('setting:theme') == 'light' ? false : true;   //Random().nextBool();
-const bool darkMode = true;
+const bool darkMode = false;
 const primaryColor = Color(0xFF235BEF);
 var primaryStyle = Util.colorPrimary(primaryColor);
 
@@ -46,6 +46,7 @@ const fw8 = FontWeight.w800;
 const fw9 = FontWeight.w900;
 
 const crossStart = CrossAxisAlignment.start;
+const crossCenter = CrossAxisAlignment.center;
 const mainStart = MainAxisAlignment.start;
 const mainMin = MainAxisSize.min;
 

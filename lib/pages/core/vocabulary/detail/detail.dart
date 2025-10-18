@@ -1,8 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:vocabulary/base.dart';
+import 'package:vocabulary/pages/core/vocabulary/detail/information.dart';
+import 'package:vocabulary/script/data/vocabulary/vocabulary.dart';
 
 class VocabularyDetailPage extends StatefulWidget {
-  const VocabularyDetailPage({super.key});
+  final int unitNum;
+  final String textbookName;
+  final Vocabulary voc;
+
+  const VocabularyDetailPage({
+    super.key,
+    required this.voc,
+    required this.unitNum,
+    required this.textbookName,
+  });
 
   @override
   State<VocabularyDetailPage> createState() => _VocabularyDetailPageState();
@@ -25,7 +35,16 @@ class _VocabularyDetailPageState extends State<VocabularyDetailPage> {
           icon(Icons.arrow_back, 26),
           () => Navigator.pop(context),
         ),
+        actions: [
+          iconButton(icon(Icons.menu, 26)),
+          width(5),
+        ],
       ),
+      body: VocabularyDetailInfo(
+        unitNum: widget.unitNum,
+        textbookName: widget.textbookName,
+        voc: widget.voc,
+      )
     );
   }
 }

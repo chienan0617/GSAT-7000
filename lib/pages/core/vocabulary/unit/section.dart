@@ -3,9 +3,10 @@ import 'package:vocabulary/pages/core/vocabulary/inventory/inventory.dart';
 import 'package:vocabulary/script/data/unit.dart';
 
 class UnitSelection extends StatelessWidget {
+  final String textbookName;
   final Unit unit;
 
-  const UnitSelection({super.key, required this.unit});
+  const UnitSelection({super.key, required this.unit, required this.textbookName});
 
   @override
   Widget build(BuildContext ctx) {
@@ -14,7 +15,7 @@ class UnitSelection extends StatelessWidget {
         onTap: () => Navigator.push(
           ctx,
           MaterialPageRoute(
-            builder: (_) => VocabularyInventoryPage(unit: unit),
+            builder: (_) => VocabularyInventoryPage(unit: unit, textbookName: textbookName),
           ),
         ),
         child: Container(

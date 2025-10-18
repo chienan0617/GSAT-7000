@@ -19,11 +19,15 @@ class VocabularyUsage {
   @HiveField(4)
   final List<String> examples;
 
+  @HiveField(5)
+  final List<List<String>> exaTran;
+
   VocabularyUsage(
     this.synonyms,
     this.antonyms,
     this.extensions,
     this.collocation,
-    this.examples
+    this.examples,
+    this.exaTran
   );
 }

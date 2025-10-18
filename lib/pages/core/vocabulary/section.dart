@@ -34,7 +34,7 @@ class VocabularyTextbookSection extends StatelessWidget {
                   mainAxisSize: mainMin,
                   children: [
                     height(10),
-                    textNt(textbook.catalog, 20, fw7),
+                    textNt(textbook.name, 20, fw7),
                     expand(),
                     textD("完成度 27%", 14, fw5, textColor2),
                     height(2.5),

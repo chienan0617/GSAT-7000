@@ -15,9 +15,9 @@ mixin TextbookDecoder {
 
   static Textbook decodeTextbookFromDecodedString(String source) {
     final List<String> sep = source.split('&');
-    List<dynamic> j = [sep[0], _getUnits(sep[1]), _getTime(sep[2]), sep[3]];
+    List<dynamic> j = [sep[0], _getUnits(sep[1]), _getTime(sep[2])];
 
-    return Textbook(j[0], j[1], j[2], j[3]);
+    return Textbook(j[0], j[1], j[2]);
   }
 
   static List<Unit> _getUnits(String source) {

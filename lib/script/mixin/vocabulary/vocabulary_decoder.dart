@@ -17,7 +17,7 @@ mixin VocabularyDecoder {
   }
 
   static Vocabulary decodeVocFromDecodedString(String source) {
-    final List<String> sep = source.split(",");
+    final List<String> sep = source.split("\\");
 
     List<dynamic> j = [
       // *
@@ -32,18 +32,29 @@ mixin VocabularyDecoder {
       _spilt(sep[7]),
       sep[8],
       _spilt(sep[9]),
+      _spiltTrans(sep[10]),
     ];
 
     // handle
     final info = VocabularyInformation(j[0], j[1], j[2], j[3], j[4]);
     final customize = VocabularyCustomize(false, false, 0, null, null);
-    final usage = VocabularyUsage(j[5], j[6], j[7], j[8], j[9]);
+    final usage = VocabularyUsage(j[5], j[6], j[7], j[8], j[9], j[10]);
 
     return Vocabulary(info, customize, usage);
   }
 
   static List<String> _spilt(String sou) {
     return sou.split('/').toList();
+  }
+
+  static List<List<String>> _spiltTrans(String sou) {
+    List<List<String>> returned = [];
+    final list = _spilt(sou);
+
+    for (var e in list) {
+      returned.add(e.split('%'));
+    }
+    return returned;
   }
 
   static LanguageType _getLangType(String type) {
@@ -56,7 +67,7 @@ mixin VocabularyDecoder {
 
   static VocabularyType _getVocType(String type) {
     return switch (type) {
-      'n' => VocabularyType .noun,
+      'n' => VocabularyType.noun,
       'v' => VocabularyType.verb,
       'a' => VocabularyType.adj,
       'd' => VocabularyType.adv,

@@ -20,22 +20,19 @@ class TextbookAdapter extends TypeAdapter<Textbook> {
       fields[0] as String,
       (fields[1] as List).cast<Unit>(),
       fields[2] as DateTime,
-      fields[3] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, Textbook obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
       ..write(obj.units)
       ..writeByte(2)
-      ..write(obj.createTime)
-      ..writeByte(3)
-      ..write(obj.catalog);
+      ..write(obj.createTime);
   }
 
   @override
